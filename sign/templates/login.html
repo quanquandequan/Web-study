@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+
+    <link rel="shortcut icon"  href="/static/image/logo.jpg">
+    <link rel="stylesheet" type="text/css" href="/static/style/login.css"/>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div id="login_frame">
+
+        <p id="image_logo"><img src="/static/image/logo.jpg" style="width:100px; height:100px; border-radius: 30%"></p>
+
+        <form method="post" action="/login_action/">
+            <p><label class="label_input">账号</label><input type="text" name="username" class="text_field"/></p>
+            <p><label class="label_input">密码</label><input type="password" name="password" class="text_field"/></p>
+
+            <div id="login_control">
+                <input type="submit" id="btn_login" value="登录">
+                <a id="forget_pwd" href="/forget_password/">忘记密码？</a>
+            </div>
+
+        </form>
+
+        {% if message %}
+        <div id="message">{{ message }}</div>
+        {% endif %}
+        {% csrf_token %}
+    </div>
+
+</body>
+</html>
